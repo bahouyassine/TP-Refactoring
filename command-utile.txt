@@ -1,0 +1,5 @@
+./gradlew test
+./gradlew jacocoTestReport
+
+
+./gradlew test --info

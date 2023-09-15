@@ -39,12 +39,12 @@ class GildedRoseTest {
   
   @Test
   @DisplayName("Test that quality of Aged Brie increases proproly")
-  void test_quality_invrease_Aged_Brie() {
+  void test_quality_invrease_Backstage_passes_to_a_TAFKAL80ETC_concert() {
     Item[] items = new Item[] {
-      new Item("Aged Brie", 15, 20), //
-      new Item("Aged Brie", 9, 20), //
-      new Item("Aged Brie", 4, 20), //
-      new Item("Aged Brie", 0, 20), //
+      new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20), //
+      new Item("Backstage passes to a TAFKAL80ETC concert", 9, 20), //
+      new Item("Backstage passes to a TAFKAL80ETC concert", 4, 20), //
+      new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20), //
      };
 
     GildedRose app = new GildedRose(items);
@@ -52,20 +52,22 @@ class GildedRoseTest {
     assertEquals(21,items[0].quality,"Value needs to be increased to 21" );
     assertEquals(22,items[1].quality,"Value needs to be increased to 22" );
     assertEquals(23,items[2].quality,"Value needs to be increased to 23" );
-    // assertEquals(0,items[2].quality,"Value needs to be increased by 0" );
+    assertEquals(0,items[3].quality,"Value needs to be decreased to 0" );
 
   
   }
-
 
 
   @Test
   @DisplayName("Test that quality of Aged Brie increases proproly")
-  void test_quality_invrease_Backstage_passes() {
-    Item element = new Item("Aged Brie", 12, 0);
+  void test_quality_invrease_Aged_Brie() {
+    Item element = new Item("Aged Brie", 5, 0);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals(1,element.quality,"" );
-  }
+    assertEquals(1, element.quality, "the name changed");
+
+
   
+  }
+
 }
