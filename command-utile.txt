@@ -1,6 +1,6 @@
 ./gradlew test
 ./gradlew jacocoTestReport
-
+jacaco min missed test 22 cases
 
 ./gradlew test --info
 
