@@ -96,7 +96,15 @@ class GildedRoseTest {
 
   }
 
+@Test
+  @DisplayName("test_general_type_seelin_negative_qulaity_positive ")
+  void test_general_type_seelin_negative_qulaity_positive() {
+    Item element = new Item("Sulfuras, Hand of Ragnaros", -10, 30);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(30, element.quality, "the quality is expected to be 30");
 
+  }
 
 
   
