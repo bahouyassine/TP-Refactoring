@@ -166,9 +166,30 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(7, element.quality, "expected quality to be 3");
 
-
-  
   }
+
+  @Test
+  @DisplayName("test_backsatge_quality_from_49_to_50_sellin_less_then_10")
+  void test_backsatge_quality_from_49_to_50_sellin_less_then_10() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(50, element.quality, "expected quality to be 50");
+
+  }
+  @Test 
+  @DisplayName("test_backsatge_quality_from_49_to_50_sellin_less_then_5")
+  void test_backsatge_quality_from_49_to_50_sellin_less_then_5() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(50, element.quality, "expected quality to be 50");
+
+  }
+
+
+
+
 /* --
 /* -----------------------------not yet implemented----------------------
  @Test
