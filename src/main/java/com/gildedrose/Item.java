@@ -2,6 +2,13 @@ package com.gildedrose;
 
 public class Item {
 
+
+  public static final int MINIMUM_QUALITY = 0;
+  public static final int MAXIMUM_QUALITY = 50;
+  public static final String AGED_BRIE = "Aged Brie";
+  public static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
+  public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+
     public String name;
 
     public int sellIn;
@@ -18,4 +25,9 @@ public class Item {
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
+
+    public void updateQuality() {
+
+    
+      }
 }
