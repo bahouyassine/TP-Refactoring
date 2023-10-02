@@ -18,23 +18,23 @@ class GildedRose {
           && !items[i].name.equals(BACKSTAGE)) {
         if (items[i].quality > MINIMUM_QUALITY) {
           if (!items[i].name.equals(SULFURAS)) {
-            items[i].quality = items[i].quality - 1;
+            items[i].quality -= 1;
           }
         }
       } else {
         if (items[i].quality < MAXIMUM_QUALITY) {
-          items[i].quality = items[i].quality + 1;
+          items[i].quality += 1;
 
           if (items[i].name.equals(BACKSTAGE)) {
             if (items[i].sellIn < 11) {
               if (items[i].quality < MAXIMUM_QUALITY) {
-                items[i].quality = items[i].quality + 1;
+                items[i].quality +=  1;
               }
             }
 
             if (items[i].sellIn < 6) {
               if (items[i].quality < MAXIMUM_QUALITY) {
-                items[i].quality = items[i].quality + 1;
+                items[i].quality +=  1;
               }
             }
           }
@@ -42,7 +42,7 @@ class GildedRose {
       }
 
       if (!items[i].name.equals(SULFURAS)) {
-        items[i].sellIn = items[i].sellIn - 1;
+        items[i].sellIn -= 1;
       }
 
       if (items[i].sellIn < 0) {
@@ -50,15 +50,15 @@ class GildedRose {
           if (!items[i].name.equals(BACKSTAGE)) {
             if (items[i].quality > MINIMUM_QUALITY) {
               if (!items[i].name.equals(SULFURAS)) {
-                items[i].quality = items[i].quality - 1;
+                items[i].quality -= 1;
               }
             }
           } else {
-            items[i].quality = items[i].quality - items[i].quality;
+            items[i].quality = 0;
           }
         } else {
           if (items[i].quality < MAXIMUM_QUALITY) {
-            items[i].quality = items[i].quality + 1;
+            items[i].quality += 1;
           }
         }
       }
