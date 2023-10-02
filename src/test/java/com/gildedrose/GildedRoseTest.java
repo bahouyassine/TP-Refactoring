@@ -127,6 +127,33 @@ class GildedRoseTest {
 
   
   }
+@Test
+  @DisplayName("test_backstage_mutation_sellin11 ")
+  void test_backstage_mutation_sellin11() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 0);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(1, element.quality, "the quality is expected to be 1");
+
+  }
+@Test
+  @DisplayName("test_backstage_mutation_sellin6 ")
+  void test_backstage_mutation_sellin6() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 0);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(2, element.quality, "the quality is expected to be 2");
+
+  }
+  @Test
+  @DisplayName("test_backstage_mutation_sellin0 ")
+  void test_backstage_mutation_sellin0() {
+    Item element = new Item("foo", 1, 2);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(1, element.quality, "the quality is expected to be 2");
+
+  }
 
 
   @Test
