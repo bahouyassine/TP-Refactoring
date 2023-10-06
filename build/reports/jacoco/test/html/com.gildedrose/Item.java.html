@@ -1,22 +1,91 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Item.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gilded-rose-kata</a> &gt; <a href="index.source.html" class="el_package">com.gildedrose</a> &gt; <span class="el_source">Item.java</span></div><h1>Item.java</h1><pre class="source lang-java linenums">package com.gildedrose;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Item.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gilded-rose-kata</a> &gt; <a href="index.source.html" class="el_package">com.gildedrose</a> &gt; <span class="el_source">Item.java</span></div><h1>Item.java</h1><pre class="source lang-java linenums">package com.gildedrose;
 
 public class Item {
 
-    public String name;
+  public static final int MINIMUM_QUALITY = 0;
+  public static final int MAXIMUM_QUALITY = 50;
+  public static final String AGED_BRIE = &quot;Aged Brie&quot;;
+  public static final String BACKSTAGE =
+    &quot;Backstage passes to a TAFKAL80ETC concert&quot;;
+  public static final String SULFURAS = &quot;Sulfuras, Hand of Ragnaros&quot;;
 
-    public int sellIn;
+  public String name;
+  public int sellIn;
+  public int quality;
 
-    public int quality;
+<span class="fc" id="L16">  public Item(String name, int sellIn, int quality) {</span>
+<span class="fc" id="L17">    this.name = name;</span>
+<span class="fc" id="L18">    this.sellIn = sellIn;</span>
+<span class="fc" id="L19">    this.quality = quality;</span>
+<span class="fc" id="L20">  }</span>
 
-<span class="fc" id="L11">    public Item(String name, int sellIn, int quality) {</span>
-<span class="fc" id="L12">        this.name = name;</span>
-<span class="fc" id="L13">        this.sellIn = sellIn;</span>
-<span class="fc" id="L14">        this.quality = quality;</span>
-<span class="fc" id="L15">    }</span>
+  @Override
+  public String toString() {
+<span class="fc" id="L24">    return this.name + &quot;, &quot; + this.sellIn + &quot;, &quot; + this.quality;</span>
+  }
 
-   @Override
-   public String toString() {
-<span class="fc" id="L19">        return this.name + &quot;, &quot; + this.sellIn + &quot;, &quot; + this.quality;</span>
+  public boolean isAgedBrie() {
+<span class="nc bnc" id="L28" title="All 2 branches missed.">    return this.name == AGED_BRIE;</span>
+  }
+
+  public boolean isBackstagePass() {
+<span class="nc bnc" id="L32" title="All 2 branches missed.">    return this.name == BACKSTAGE;</span>
+  }
+
+  public boolean isSulfuras() {
+<span class="nc bnc" id="L36" title="All 2 branches missed.">    return this.name == SULFURAS;</span>
+  }
+
+  public void increaseQuality() {
+<span class="nc bnc" id="L40" title="All 2 branches missed.">    if (this.quality &lt; MAXIMUM_QUALITY) {</span>
+<span class="nc" id="L41">      this.quality++;</span>
     }
+<span class="nc" id="L43">  }</span>
+
+  public void decreaseQuality() {
+<span class="nc bnc" id="L46" title="All 2 branches missed.">    if (this.quality &gt; MINIMUM_QUALITY) {</span>
+<span class="nc" id="L47">      this.quality--;</span>
+    }
+<span class="nc" id="L49">  }</span>
+
+  public void decreaseSellIn() {
+<span class="nc" id="L52">    this.sellIn--;</span>
+<span class="nc" id="L53">  }</span>
+
+  public void updateQuality() {
+<span class="nc bnc" id="L56" title="All 4 branches missed.">    if (!isAgedBrie() &amp;&amp; !isBackstagePass()) {</span>
+<span class="nc" id="L57">      this.decreaseQuality();</span>
+    } else {
+<span class="nc bnc" id="L59" title="All 2 branches missed.">      if (this.quality &lt; MAXIMUM_QUALITY) {</span>
+<span class="nc" id="L60">        this.quality += 1;</span>
+
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if (this.name.equals(BACKSTAGE)) {</span>
+<span class="nc bnc" id="L63" title="All 4 branches missed.">          if (this.sellIn &lt; 11 &amp;&amp; this.quality &lt; MAXIMUM_QUALITY) {</span>
+<span class="nc" id="L64">            this.quality += 1;</span>
+          }
+
+<span class="nc bnc" id="L67" title="All 4 branches missed.">          if (this.sellIn &lt; 6 &amp;&amp; this.quality &lt; MAXIMUM_QUALITY) {</span>
+<span class="nc" id="L68">            this.quality += 1;</span>
+          }
+        }
+      }
+    }
+
+<span class="nc" id="L74">    this.sellIn -= 1;</span>
+
+<span class="nc bnc" id="L76" title="All 2 branches missed.">    if (this.sellIn &lt; 0) {</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">      if (!this.name.equals(AGED_BRIE)) {</span>
+<span class="nc bnc" id="L78" title="All 4 branches missed.">        if (!this.name.equals(BACKSTAGE) &amp;&amp; this.quality &gt; MINIMUM_QUALITY) {</span>
+<span class="nc" id="L79">          this.quality -= 1;</span>
+        } else {
+<span class="nc" id="L81">          this.quality = 0;</span>
+        }
+      } else {
+<span class="nc bnc" id="L84" title="All 2 branches missed.">        if (this.quality &lt; MAXIMUM_QUALITY) {</span>
+<span class="nc" id="L85">          this.quality += 1;</span>
+        }
+      }
+    }
+<span class="nc" id="L89">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
