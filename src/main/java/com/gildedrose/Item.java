@@ -65,10 +65,8 @@ public class Item {
           this.quality = 0;
         }
 
-        if (!this.isAgedBrie()) {
-          if (!this.isBackstagePass()) {
-            this.quality = Math.max(this.quality-1,MINIMUM_QUALITY);
-          }
+        if (!this.isAgedBrie() && !this.isBackstagePass()) {
+          this.quality = Math.max(this.quality-1,MINIMUM_QUALITY);
         }
       }
     }
