@@ -38,33 +38,32 @@ public class Item {
 
   public void updateItemQuality() {
     if (!this.isSulfuras()) {
+      if (this.isBackstagePass()) {
+          this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
+          if (this.sellIn < 11 ) {
+            this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
+          }
+
+          if (this.sellIn < 6) {
+            this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
+          }
+        }
+      if (this.isAgedBrie()){
+        this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
+      }
       if (!this.isAgedBrie() && !this.isBackstagePass()) {
         this.quality = Math.max(this.quality-1,MINIMUM_QUALITY);
-      } else {
-          this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
-          if (this.name.equals(BACKSTAGE)) {
-            if (this.sellIn < 11 ) {
-              this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
-            }
-
-            if (this.sellIn < 6) {
-              this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
-            }
-          }
-      }
-
+      } 
       this.sellIn -= 1;
-
       if (this.sellIn < 0) {
-        if (!this.name.equals(AGED_BRIE)) {
-          if (!this.name.equals(BACKSTAGE)) {
+        if (!this.isAgedBrie()) {
+          if (!this.isBackstagePass()) {
             this.quality = Math.max(this.quality-1,MINIMUM_QUALITY);
           } else {
             this.quality = 0;
           }
         } else {
             this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
-        
         }
       }
     }
