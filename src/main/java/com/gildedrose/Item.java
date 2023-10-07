@@ -37,37 +37,38 @@ public class Item {
   }
 
   public void updateItemQuality() {
-    if (!this.isSulfuras()) {
-      if (this.isBackstagePass()) {
-          this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
-          if (this.sellIn < 11 ) {
-            this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
-          }
-
-          if (this.sellIn < 6) {
-            this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
-          }
-        }
-      if (this.isAgedBrie()){
-        this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
+    if (this.isSulfuras()) {
+      return;
+    }
+    
+    if (this.isBackstagePass()) {
+      this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+      if (this.sellIn < 11) {
+        this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
       }
-      if (!this.isAgedBrie() && !this.isBackstagePass()) {
-        this.quality = Math.max(this.quality-1,MINIMUM_QUALITY);
-      } 
 
+      if (this.sellIn < 6) {
+        this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+      }
       this.sellIn -= 1;
       if (this.sellIn < 0) {
-        if (this.isAgedBrie()){
-          this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
-        }
+        this.quality = 0;
+      }
+    }
 
-        if (this.isBackstagePass()) {
-          this.quality = 0;
-        }
+    if (this.isAgedBrie()) {
+      this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+      this.sellIn -= 1;
+      if (this.sellIn < 0) {
+        this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+      }
+    }
 
-        if (!this.isAgedBrie() && !this.isBackstagePass()) {
-          this.quality = Math.max(this.quality-1,MINIMUM_QUALITY);
-        }
+    if (!this.isAgedBrie() && !this.isBackstagePass()) {
+      this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
+      this.sellIn -= 1;
+      if (this.sellIn < 0) {
+        this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
       }
     }
   }
