@@ -47,12 +47,12 @@ public class Item {
           this.quality += 1;
 
           if (this.name.equals(BACKSTAGE)) {
-            if (this.sellIn < 11 && this.quality < MAXIMUM_QUALITY) {
-              this.quality += 1;
+            if (this.sellIn < 11 ) {
+              this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
             }
 
-            if (this.sellIn < 6 && this.quality < MAXIMUM_QUALITY) {
-              this.quality += 1;
+            if (this.sellIn < 6) {
+              this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
             }
           }
         }
