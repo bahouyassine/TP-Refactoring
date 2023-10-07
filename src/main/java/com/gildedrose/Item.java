@@ -60,11 +60,14 @@ public class Item {
         if (this.isAgedBrie()){
           this.quality = Math.min(this.quality+1,MAXIMUM_QUALITY);
         }
+
+        if (this.isBackstagePass()) {
+          this.quality = 0;
+        }
+
         if (!this.isAgedBrie()) {
           if (!this.isBackstagePass()) {
             this.quality = Math.max(this.quality-1,MINIMUM_QUALITY);
-          } else {
-            this.quality = 0;
           }
         }
       }
