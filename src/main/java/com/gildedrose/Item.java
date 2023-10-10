@@ -38,12 +38,9 @@ public class Item {
       case BACKSTAGE:
         if (this.sellIn >= 11) {
           this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-        }
-        if (this.sellIn < 11 && this.sellIn >= 6) {
+        } else if (this.sellIn >= 6) {
           this.quality = Math.min(this.quality + 2, MAXIMUM_QUALITY);
-        }
-
-        if (this.sellIn < 6 && this.sellIn >= 0) {
+        } else if (this.sellIn >= 0) {
           this.quality = Math.min(this.quality + 3, MAXIMUM_QUALITY);
         }
         this.sellIn -= 1;
