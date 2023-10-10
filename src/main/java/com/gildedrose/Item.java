@@ -24,52 +24,41 @@ public class Item {
     return this.name + ", " + this.sellIn + ", " + this.quality;
   }
 
-  public boolean isAgedBrie() {
-    return this.name == AGED_BRIE;
-  }
-
-  public boolean isBackstagePass() {
-    return this.name == BACKSTAGE;
-  }
-
-  public boolean isSulfuras() {
-    return this.name == SULFURAS;
-  }
-
   public void updateItemQuality() {
-    if (this.isSulfuras()) {
-      return;
-    }
-    
-    if (this.isBackstagePass()) {
-      this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-      if (this.sellIn < 11) {
+    switch (this.name) {
+      case SULFURAS:
+        break;
+      case AGED_BRIE:
         this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-      }
+        this.sellIn -= 1;
+        if (this.sellIn < 0) {
+          this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+        }
+        break;
+      case BACKSTAGE:
+        if (this.sellIn >= 11) {
+          this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+        }
+        if (this.sellIn < 11 && this.sellIn >= 6) {
+          this.quality = Math.min(this.quality + 2, MAXIMUM_QUALITY);
+        }
 
-      if (this.sellIn < 6) {
-        this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-      }
-      this.sellIn -= 1;
-      if (this.sellIn < 0) {
-        this.quality = 0;
-      }
-    }
+        if (this.sellIn < 6 && this.sellIn >= 0) {
+          this.quality = Math.min(this.quality + 3, MAXIMUM_QUALITY);
+        }
+        this.sellIn -= 1;
+        if (this.sellIn < 0) {
+          this.quality = 0;
+        }
 
-    if (this.isAgedBrie()) {
-      this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-      this.sellIn -= 1;
-      if (this.sellIn < 0) {
-        this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-      }
-    }
-
-    if (!this.isAgedBrie() && !this.isBackstagePass()) {
-      this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
-      this.sellIn -= 1;
-      if (this.sellIn < 0) {
+        break;
+      default:
         this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
-      }
+        this.sellIn -= 1;
+        if (this.sellIn < 0) {
+          this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
+        }
+        break;
     }
   }
 }
