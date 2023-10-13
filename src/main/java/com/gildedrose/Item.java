@@ -8,6 +8,7 @@ public class Item {
   public static final String BACKSTAGE =
     "Backstage passes to a TAFKAL80ETC concert";
   public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+  public static final String CONJURED = "Conjured Mana Cake";
 
   public String name;
   public int sellIn;
@@ -47,6 +48,15 @@ public class Item {
         if (this.sellIn < 0) {
           this.quality = 0;
         }
+
+        break;
+      case CONJURED:
+        if (this.sellIn > 0) {
+          this.quality -= 2;
+        }
+        else{
+          this.quality -= 4;
+        } 
 
         break;
       default:

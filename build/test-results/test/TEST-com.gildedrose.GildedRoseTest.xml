@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="20" skipped="0" failures="2" errors="0" timestamp="2023-10-13T12:51:23" hostname="ada.local.isima.fr" time="0.077">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2023-10-13T12:55:31" hostname="ada.local.isima.fr" time="0.076">
   <properties/>
-  <testcase name="Test that Sulfuras sellin fix" classname="com.gildedrose.GildedRoseTest" time="0.024"/>
-  <testcase name="test_backstage_mutation_sellin11" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="Test that Sulfuras sellin fix" classname="com.gildedrose.GildedRoseTest" time="0.029"/>
+  <testcase name="test_backstage_mutation_sellin11" classname="com.gildedrose.GildedRoseTest" time="0.004"/>
   <testcase name="Test that quality is positive after update" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
   <testcase name="test_backsatge_quality_from_49_to_50_sellin_less_then_5" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="test_backsatge_quality_from_49_to_50_sellin_less_then_10" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
   <testcase name="Test that quality of Aged Brie is less then 50" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="test_quality_decrease_general_case_sellin_negative" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="test_general_type_seelin_negative_qulaity_positive" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
-  <testcase name="Test that quality of Backstage passes to a TAFKAL80ETC concert is less then 50" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="test_Conjured_sell_more_then_0" classname="com.gildedrose.GildedRoseTest" time="0.01">
-    <failure message="org.opentest4j.AssertionFailedError: expected quality to be 47 ==&gt; expected: &lt;47&gt; but was: &lt;48&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected quality to be 47 ==&gt; expected: &lt;47&gt; but was: &lt;48&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
-	at app//com.gildedrose.GildedRoseTest.test_Conjured_sell_more_then_0(GildedRoseTest.java:209)
-	at java.base@20.0.2/java.lang.reflect.Method.invoke(Method.java:578)
-	at java.base@20.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@20.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
-</failure>
-  </testcase>
+  <testcase name="test_general_type_seelin_negative_qulaity_positive" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test that quality of Backstage passes to a TAFKAL80ETC concert is less then 50" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="test_Conjured_sell_more_then_0" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="Test that Sulfuras quality fix" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="test_Conjured_sell_less_then_0" classname="com.gildedrose.GildedRoseTest" time="0.001">
-    <failure message="org.opentest4j.AssertionFailedError: expected quality to be 47 ==&gt; expected: &lt;45&gt; but was: &lt;47&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected quality to be 47 ==&gt; expected: &lt;45&gt; but was: &lt;47&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
-	at app//com.gildedrose.GildedRoseTest.test_Conjured_sell_less_then_0(GildedRoseTest.java:219)
-	at java.base@20.0.2/java.lang.reflect.Method.invoke(Method.java:578)
-	at java.base@20.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@20.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
-</failure>
-  </testcase>
-  <testcase name="Test that quality of Backstage passes increases proproly" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="test_Conjured_sell_less_then_0" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test that quality of Backstage passes increases proproly" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="test_backstage_mutation_sellin0" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="test_backstage_mutation_sellin6" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test that quality of Aged Brie increases proproly" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test tooString" classname="com.gildedrose.GildedRoseTest" time="0.009"/>
-  <testcase name="test_quality_increase_agedbrie_sellin_negative_quality_less_50" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test that quality of Aged Brie increases proproly" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test tooString" classname="com.gildedrose.GildedRoseTest" time="0.01"/>
+  <testcase name="test_quality_increase_agedbrie_sellin_negative_quality_less_50" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="test_quality_decrease_general_case" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
