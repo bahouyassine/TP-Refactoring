@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">18</div>
+<div class="counter">20</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">2</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.070s</div>
+<div class="counter">0.058s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">90%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,10 +61,50 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="test_Conjured_sell_less_then_0()"></a>
+<h3 class="failures">test_Conjured_sell_less_then_0</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected quality to be 47 ==&gt; expected: &lt;45&gt; but was: &lt;47&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.test_Conjured_sell_less_then_0(GildedRoseTest.java:219)
+	at java.base@20.0.2/java.lang.reflect.Method.invoke(Method.java:578)
+	at java.base@20.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@20.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="test_Conjured_sell_more_then_0()"></a>
+<h3 class="failures">test_Conjured_sell_more_then_0</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected quality to be 47 ==&gt; expected: &lt;47&gt; but was: &lt;48&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.test_Conjured_sell_more_then_0(GildedRoseTest.java:209)
+	at java.base@20.0.2/java.lang.reflect.Method.invoke(Method.java:578)
+	at java.base@20.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@20.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,8 +118,20 @@
 <tr>
 <td class="success">Test that the name is unchanged</td>
 <td class="success">testName()</td>
-<td class="success">0.006s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">test_Conjured_sell_less_then_0</td>
+<td class="failures">test_Conjured_sell_less_then_0()</td>
+<td class="failures">0.001s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">test_Conjured_sell_more_then_0</td>
+<td class="failures">test_Conjured_sell_more_then_0()</td>
+<td class="failures">0.010s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">test_backsatge_quality_from_49_to_50_sellin_less_then_10</td>
@@ -90,7 +142,7 @@
 <tr>
 <td class="success">test_backsatge_quality_from_49_to_50_sellin_less_then_5</td>
 <td class="success">test_backsatge_quality_from_49_to_50_sellin_less_then_5()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -102,7 +154,7 @@
 <tr>
 <td class="success">test_backstage_mutation_sellin11</td>
 <td class="success">test_backstage_mutation_sellin11()</td>
-<td class="success">0.003s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -114,19 +166,19 @@
 <tr>
 <td class="success">test_general_type_seelin_negative_qulaity_positive</td>
 <td class="success">test_general_type_seelin_negative_qulaity_positive()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_quality_decrease_general_case</td>
 <td class="success">test_quality_decrease_general_case()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_quality_decrease_general_case_sellin_negative</td>
 <td class="success">test_quality_decrease_general_case_sellin_negative()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -150,7 +202,7 @@
 <tr>
 <td class="success">Test that quality of Aged Brie is less then 50</td>
 <td class="success">test_quality_of_AgedBrie_less_then_50()</td>
-<td class="success">0.002s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -168,13 +220,13 @@
 <tr>
 <td class="success">Test that Sulfuras quality fix</td>
 <td class="success">test_sulfuras_quality_fix()</td>
-<td class="success">0.002s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test that Sulfuras sellin fix</td>
 <td class="success">test_sulfuras_sellin_fix()</td>
-<td class="success">0.036s</td>
+<td class="success">0.024s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -193,7 +245,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.3</a> at 10 oct. 2023, 16:24:46</p>
+<a href="http://www.gradle.org">Gradle 8.3</a> at 13 oct. 2023, 14:51:23</p>
 </div>
 </div>
 </body>

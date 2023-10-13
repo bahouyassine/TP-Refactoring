@@ -2,27 +2,6 @@ package com.gildedrose;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-/*
-
-sellin --> days left to sell
-quality ---> degrades at diffrent speeds depending on the type of the product and sellin
-updateQuality--> Update the values at the end of each day
-
-
-
-
-tests to do : 
-	- when "sellIn"== 0 the "quality" decreses X2
-	- "quality">0
-	- if name = Aged Brie ----> "quality" += 1
-	- "qualitu" < 50
-	- "Sulfuras" "sellin" fix and "quality" fix
-	- "Backstage passes" 
-		- quality += 2 if sellin <=10
-		- quality += 3 if 0 < sellin <=5 
-		- quality == 0 if sellin == 0
-	- Conjured --> quality -= 2 
-  */
 class GildedRoseTest {
 
 
@@ -221,8 +200,25 @@ class GildedRoseTest {
     assertEquals(50, element.quality, "expected quality to be 50");
 
   }
+  @Test 
+  @DisplayName("test_Conjured_sell_more_then_0")
+  void test_Conjured_sell_more_then_0() {
+    Item element = new Item("Conjured Mana Cake", 5, 49);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(47, element.quality, "expected quality to be 47");
 
+  }
 
+  @Test 
+  @DisplayName("test_Conjured_sell_less_then_0")
+  void test_Conjured_sell_less_then_0() {
+    Item element = new Item("Conjured Mana Cake", -1, 49);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(45, element.quality, "expected quality to be 47");
+
+  }
 
 
 /* --
