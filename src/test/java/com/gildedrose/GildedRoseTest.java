@@ -86,26 +86,50 @@ class GildedRoseTest {
   }
 
 
-  
-  @Test
-  @DisplayName("Test that quality of Backstage passes increases proproly")
-  void test_quality_invrease_Backstage_passes_to_a_TAFKAL80ETC_concert() {
-    Item[] items = new Item[] {
-      new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20), //
-      new Item("Backstage passes to a TAFKAL80ETC concert", 9, 20), //
-      new Item("Backstage passes to a TAFKAL80ETC concert", 4, 20), //
-      new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20), //
-     };
 
-    GildedRose app = new GildedRose(items);
+
+@Test
+  @DisplayName("test_quality_invrease_Backstage_passes_sellin_more_10 ")
+  void test_quality_invrease_Backstage_passes_sellin_more_10() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20);
+    GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals(21,items[0].quality,"Value needs to be increased to 21" );
-    assertEquals(22,items[1].quality,"Value needs to be increased to 22" );
-    assertEquals(23,items[2].quality,"Value needs to be increased to 23" );
-    assertEquals(0,items[3].quality,"Value needs to be decreased to 0" );
+    assertEquals(21,element.quality,"Value needs to be increased to 21" );
 
-  
   }
+
+@Test
+  @DisplayName("test_quality_invrease_Backstage_passes_sellin__less_10_more_5 ")
+  void test_quality_invrease_Backstage_passes_sellin_less_10_more_5() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 9, 20);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(22,element.quality,"Value needs to be increased to 22" );
+
+  }
+
+  @Test
+  @DisplayName("test_quality_invrease_Backstage_passes_sellin_less_5_more_0 ")
+  void test_quality_invrease_Backstage_passes_sellin_less_5_more_0() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 4, 20);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(23,element.quality,"Value needs to be increased to 23" );
+
+  }
+
+  @Test
+  @DisplayName("test_quality_invrease_Backstage_passes_sellin_less_0 ")
+  void test_quality_invrease_Backstage_passes_sellin_less_0() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", -1, 20);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(0,element.quality,"Value needs to be increased to 0" );
+
+  }
+
+
+
 @Test
   @DisplayName("test_backstage_mutation_sellin11 ")
   void test_backstage_mutation_sellin11() {
@@ -220,28 +244,4 @@ class GildedRoseTest {
 
   }
 
-
-/* --
-/* -----------------------------not yet implemented----------------------
- @Test
-  @DisplayName("Test that quality of Conjured Mana Cake decreses proproly sellin not zero")
-  void test_quality_decrease_Conjured_sellin_non_zero() {
-    Item element = new Item("Conjured Mana Cake", 5, 10);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    assertEquals(8, element.quality, "expected quality to be 8");
-  
-  }
-
-
- @Test
-  @DisplayName("Test that quality of Conjured Mana Cake decreses proproly sellin zero")
-  void test_quality_decrease_Conjured_zero() {
-    Item element = new Item("Conjured Mana Cake", 0, 10);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    assertEquals(6, element.quality, "expected quality to be 6");
-  
-  }
-*/
 }
