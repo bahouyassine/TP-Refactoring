@@ -27,45 +27,59 @@ public class Item {
 
   public void updateItemQuality() {
     switch (this.name) {
-      case SULFURAS:
-        break;
-      case AGED_BRIE:
-        this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-        this.sellIn -= 1;
-        if (this.sellIn < 0) {
-          this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-        }
-        break;
-      case BACKSTAGE:
-        if (this.sellIn >= 11) {
-          this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
-        } else if (this.sellIn >= 6) {
-          this.quality = Math.min(this.quality + 2, MAXIMUM_QUALITY);
-        } else if (this.sellIn >= 0) {
-          this.quality = Math.min(this.quality + 3, MAXIMUM_QUALITY);
-        }
-        this.sellIn -= 1;
-        if (this.sellIn < 0) {
-          this.quality = 0;
-        }
-
-        break;
-      case CONJURED:
-        if (this.sellIn > 0) {
-          this.quality -= 2;
-        }
-        else{
-          this.quality -= 4;
-        } 
-
-        break;
-      default:
-        this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
-        this.sellIn -= 1;
-        if (this.sellIn < 0) {
-          this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
-        }
-        break;
+        case SULFURAS:
+            break;
+        case AGED_BRIE:
+            updateQualityForAgedBrie();
+            break;
+        case BACKSTAGE:
+            updateQualityForBackstage();
+            break;
+        case CONJURED:
+            updateQualityForConjured();
+            break;
+        default:
+            updateQualityForRegularItem();
+            break;
     }
-  }
+}
+
+private void updateQualityForAgedBrie() {
+    this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+    this.sellIn -= 1;
+    if (this.sellIn < 0) {
+        this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+    }
+}
+
+private void updateQualityForBackstage() {
+    if (this.sellIn >= 11) {
+        this.quality = Math.min(this.quality + 1, MAXIMUM_QUALITY);
+    } else if (this.sellIn >= 6) {
+        this.quality = Math.min(this.quality + 2, MAXIMUM_QUALITY);
+    } else if (this.sellIn >= 0) {
+        this.quality = Math.min(this.quality + 3, MAXIMUM_QUALITY);
+    }
+    this.sellIn -= 1;
+    if (this.sellIn < 0) {
+        this.quality = 0;
+    }
+}
+
+private void updateQualityForConjured() {
+    if (this.sellIn > 0) {
+        this.quality -= 2;
+    } else {
+        this.quality -= 4;
+    }
+}
+
+private void updateQualityForRegularItem() {
+    this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
+    this.sellIn -= 1;
+    if (this.sellIn < 0) {
+        this.quality = Math.max(this.quality - 1, MINIMUM_QUALITY);
+    }
+}
+
 }
