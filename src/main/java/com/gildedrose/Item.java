@@ -72,6 +72,7 @@ private void updateQualityForConjured() {
     } else {
         this.quality -= 4;
     }
+    this.sellIn -= 1;
 }
 
 private void updateQualityForRegularItem() {

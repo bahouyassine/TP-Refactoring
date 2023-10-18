@@ -243,5 +243,13 @@ class GildedRoseTest {
     assertEquals(45, element.quality, "expected quality to be 47");
 
   }
+  @Test 
+  @DisplayName("test_Conjured_sellIn_decrease")
+  void test_Conjured_sellIn_decrease() {
+    Item element = new Item("Conjured Mana Cake", 5, 49);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(4, element.sellIn, "expected quality to be 4");
 
+  }
 }
